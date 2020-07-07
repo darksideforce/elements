@@ -4,8 +4,15 @@ import router from './router'
 import './plugins/element.js'
 import './assets/css/global.css'
 import './assets/css/icon.css'
+import axios from 'axios'
 
+Vue.prototype.$http = axios
+//配置全局默认URL
+axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 Vue.config.productionTip = false
+
+
+
 
 new Vue({
   router,

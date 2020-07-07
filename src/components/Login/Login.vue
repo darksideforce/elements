@@ -31,8 +31,8 @@ export default {
   data(){
     return {
       loginForm:{
-        username:'zs',
-        password:123
+        username:'admin',
+        password:'123456'
       },
       //表单的验证规则对象
       loginFormRules:{
@@ -53,9 +53,26 @@ export default {
     reset(){
       this.$refs.loginForm.resetFields()
     },
+
+    //登录的网络请求
     login(){
       this.$refs.loginForm.validate( valid=>{
-        console.log(valid)
+        if(!valid) return;
+        //axios请求
+        this.$http.post('login',this.loginForm).then(res=>{
+          const {data} = res
+          if(data.meta.status !==200){
+            return this.$message.error('登录失败')
+          }
+          else{
+            this.$message.success('登录成功')
+            console.log(data.data.token)
+            window.sessionStorage.setItem('token',data.data.token)
+            this.$router.push('/home')
+            
+            
+          }
+        })
       })
     }
   }
