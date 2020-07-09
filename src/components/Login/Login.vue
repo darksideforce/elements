@@ -61,6 +61,7 @@ export default {
         //axios请求
         this.$http.post('login',this.loginForm).then(res=>{
           const {data} = res
+          console.log(data)
           if(data.meta.status !==200){
             return this.$message.error('登录失败')
           }
