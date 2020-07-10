@@ -6,6 +6,7 @@ import welcome from '../components/welcome/welcome'
 import user from '../components/user/user'
 import Rights from '../components/power/Rights'
 import Roles from '../components/power/Roles'
+import Cate from '../components/goods/Cate'
 
 
 Vue.use(VueRouter)
@@ -27,7 +28,8 @@ Vue.use(VueRouter)
               {path:'/users' , component:user},
               {path:'/rights' , component:Rights},
               {path:'/Roles' , component:Roles},
-
+              {path:'/Roles' , component:Roles},
+              {path:'/Categories' , component:Cate},
               ]
   }
 
