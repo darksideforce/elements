@@ -243,19 +243,6 @@ export default {
           return this.$message.error(res.meta.status)
           this.addForm.attrs = []
         }
-        this.addForm ={
-          goods_name:'',
-          goods_price:0,
-          goods_weight:0,
-          goods_number:0,
-          goods_cat:[],
-          //图片的数组
-          pics:[],
-          //商品详情描述
-          goods_introduce:'',
-          //储存动态参数和静态参数用
-          attrs:[],
-        },
         this.$message.success('添加商品成功')
         this.$router.push('/goods')
       })
