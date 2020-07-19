@@ -18,7 +18,7 @@ module.exports = {
       })
       //添加一个自定义属性，方便index.html区分不同的模式
       config.plugin('html').tap(args=>{
-        args[0].isprod = true
+        args[0].isProd = true
         return args
       })
     })
@@ -31,7 +31,7 @@ module.exports = {
         .clear()
         .add('./src/main-dev.js')
         config.plugin('html').tap(args=>{
-          args[0].isprod = false
+          args[0].isProd = false
           return args
         })  
     })
